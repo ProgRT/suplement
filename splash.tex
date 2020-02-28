@@ -1,0 +1,61 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{pgfplots}
+\usepackage{horaire}
+\usepackage{logovdr}
+\usepackage{vdr}
+
+\usepgfplotslibrary{groupplots}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{structure}{fg=marinechum}
+\usefonttheme{structurebold}
+
+\begin{document}
+
+\begin{frame}
+	\color{marinechum}
+	\renewcommand{\contenu}[1]{}
+	\frametitle{Formation complémentaire\\\small 28 septembre 2020}
+
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\logofvdr[height=4.5cm, fg=structure, fill=grischum!50, ]
+	\end{minipage}%
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\input{horairemaj}
+	\end{minipage}
+
+\end{frame}
+
+\frame{
+	\frametitle{Contrôle du rapport i:e}
+	\centering
+	\input{fig/fig-controleie}
+}
+
+\frame{
+	\frametitle{Rapport i:e (vue macroscopique)}
+	\centering
+	\input{fig/fig-ieimg-annote}
+}
+
+\frame{
+	\frametitle{Rapport i:e (vue microscopique)}
+	\centering
+	\input{fig/fig-ie1}
+}
+
+\frame{
+	\frametitle{Pressions moyennes inspiratoire et expiratoire}
+	\centering
+	\input{fig/fig-multimeter}
+}
+
+\frame{
+	\frametitle{Séquence des réglages}
+	\centering
+	\input{fig/fig-sequence}
+}
+\end{document}
