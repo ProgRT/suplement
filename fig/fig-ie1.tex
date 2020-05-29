@@ -6,7 +6,26 @@
 	ymax=60
 ]}
 
-\begin{tikzpicture}
+\def\istart{0.095}
+\def\iend{0.152}
+\def\estart{\iend}
+\iend\def\eend{0.208}
+
+\def\istartx{0.05}
+\def\iendx{0.152}
+\def\estartx{\iendx}
+\def\eendx{0.208}
+
+\begin{tikzpicture}[
+		plage/.style={
+			<->,
+			bleuclairchum,
+			ultra thick,
+		},
+		marque/.style={
+			color=turquoisechum,
+		}
+	]
 
 \begin{groupplot}[
 		group style={
@@ -18,14 +37,27 @@
 		width=\textwidth,
 		xtick={0, .25, .5, .75, 1},
 		xlabel=Temps (s),
-		ylabel=Pression (hPa)
+		ylabel=Pression (hPa),
 ]
 
-\nextgroupplot
-\iehuit {img/509.jpg};
+\iehuit {img/509-cleaned.jpg};
+%	\draw [plage] (axis cs:\istart,45) -- (axis cs:\iend,45) node [midway, above] {i};
+%	\draw [marque] (axis cs:\istart,0) -- (axis cs:\istart,60);
+%	\draw [marque] (axis cs:\iend,0) -- (axis cs:\iend,60);
+%
+%	\draw [plage] (axis cs:\estart,45) -- (axis cs:\eend,45) node [midway, above] {e};
+%	\draw [marque] (axis cs:\estart,0) -- (axis cs:\estart,60);
+%	\draw [marque] (axis cs:\eend,0) -- (axis cs:\eend,60);
 
 \nextgroupplot
-\iehuit{img/828.jpg};
+\iehuit{img/828-cleaned.jpg};
+%	\draw [plage] (axis cs:\istartx,45) -- (axis cs:\iendix,45) node [midway, above] {i};
+%	\draw [marque] (axis cs:\istartx,0) -- (axis cs:\istartx,60);
+%	\draw [marque] (axis cs:\iendx,0) -- (axis cs:\iendx,60);
+%
+%	\draw [plage] (axis cs:\estartx,45) -- (axis cs:\eendx,45) node [midway, above] {e};
+%	\draw [marque] (axis cs:\estartx,0) -- (axis cs:\estartx,60);
+%	\draw [marque] (axis cs:\eendx,0) -- (axis cs:\eendx,60);
 
 \end{groupplot}
 \end{tikzpicture}

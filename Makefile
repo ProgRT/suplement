@@ -1,15 +1,19 @@
 .PHONY: clean pdf
 
-pdf: suplement.pdf horaire.pdf splash.pdf
+splash.pdf: splash.tex fig/fig*.tex
+	lualatex splash
 
-suplement.pdf: suplement.tex
-	lualatex suplement
+figtest.pdf: figtest.tex fig/fig*.tex
+	lualatex figtest
+
+suplement.pdf: suplement.tex Makefile pkg.tex
+	pdflatex suplement
+	pdflatex suplement
 
 horaire.pdf: horaire.tex
 	lualatex horaire
 
-splash.pdf: splash.tex
-	lualatex splash
+pdf: suplement.pdf horaire.pdf splash.pdf
 
 clean:
 	rm -f *.aux *.log *.out *.snm *.toc *.nav

@@ -1,0 +1,45 @@
+\def\iehuit{%
+\addplot graphics [
+	xmin=0,
+	ymin=0,
+	xmax=1,
+	ymax=60
+]}
+
+\def\plage#1#2#3{%
+	% #1 is xmin
+	% #2 is xmax
+	% #3 is the label
+	\draw <2> [<->, turquoisechum, thick] (axis cs:#1,45)--(axis cs:#2,45) node [midway, above] {#3};
+	\draw <2> [turquoisechum, thick] (axis cs:#1,0)--(axis cs:#1,60);
+	\draw <2> [turquoisechum, thick] (axis cs:#2,0)--(axis cs:#2,60);
+}
+
+\begin{tikzpicture}
+
+\begin{groupplot}[
+		group style={
+			group size=1 by 2,
+			xlabels at=edge bottom
+		},
+		enlargelimits=false,
+		height=4cm,
+		width=\textwidth,
+		xtick={0, .25, .5, .75, 1},
+		xlabel=Temps (s),
+		ylabel=Pression (hPa)
+]
+
+\nextgroupplot
+\iehuit {img/509-cleaned.jpg};
+	\plage{.095}{.155}{i}
+	\plage{.155}{.21}{e}
+
+\nextgroupplot
+\iehuit{img/828-cleaned.jpg};
+	\plage{.06}{.145}{i}
+	\plage{.145}{.174}{e}
+
+
+\end{groupplot}
+\end{tikzpicture}

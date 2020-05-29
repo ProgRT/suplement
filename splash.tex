@@ -7,7 +7,8 @@
 
 \usepgfplotslibrary{groupplots}
 
-\setbeamertemplate{navigation symbols}{}
+\AtBeginSection{\frame{\tableofcontents[currentsection]}}
+
 \setbeamercolor{structure}{fg=marinechum}
 \usefonttheme{structurebold}
 
@@ -29,6 +30,11 @@
 
 \end{frame}
 
+\frame{\tableofcontents}
+\addcontentsline{toc}{toc}{Table des matières}
+
+\section{Rapport i:e}
+
 \frame{
 	\frametitle{Contrôle du rapport i:e}
 	\centering
@@ -44,14 +50,18 @@
 \frame{
 	\frametitle{Rapport i:e (vue microscopique)}
 	\centering
-	\input{fig/fig-ie1}
+	\input{fig/fig-ie1-annote}
 }
+
+\section{Monitorage}
 
 \frame{
 	\frametitle{Pressions moyennes inspiratoire et expiratoire}
 	\centering
 	\input{fig/fig-multimeter}
 }
+
+\section{Séquence des réglages}
 
 \frame{
 	\frametitle{Séquence des réglages}
